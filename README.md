@@ -1,4 +1,5 @@
 
+#Snippets
 
 Given a collection of Projects with the following structure:
 
@@ -27,6 +28,9 @@ Given a collection of Projects with the following structure:
     }
 
 
+----------
+
+
 ### Field Exists
 
 Search if field `nameCap` exists:
@@ -42,6 +46,19 @@ Search if field `utility.ica.icVoltage` exists:
 
 	var filter = {'utility.ica.icVoltage':{$exists:true}};
 	db.getCollection('projects').find(filter, {'utility.ica.icVoltage':1});
+
+
+----------
+
+### Field equals
+
+db.getCollection('projects').find({allocInvestor: "Query X"});
+
+#### Output:
+
+Brings back the objects where allocInvestor = "Query X"
+
+----------
 
 
 ### Aggregation count
