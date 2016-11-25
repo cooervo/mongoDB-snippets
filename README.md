@@ -33,6 +33,13 @@ Given a collection of Projects with the following structure:
 
 ### Field Exists
 
+Search if field `zoning.zonMtg.meetings.tasks` exist and only show (SELECT) `name`& `zoning.zonMtg.meetings.tasks` fields to show:
+
+	var localOptions = { name: 1, "zoning.zonMtg.meetings.tasks":1 }
+	var filter = {'zoning.zonMtg.meetings.tasks':{$exists:true}};   
+	db.projects.find(filter, localOptions);
+	
+
 Search if field `nameCap` exists:
 
 	var filter = {'nameCap':{$exists:true}};   
@@ -45,7 +52,7 @@ Brings back the object with existing field
 Search if field `utility.ica.icVoltage` exists:
 
 	var filter = {'utility.ica.icVoltage':{$exists:true}};
-	db.getCollection('projects').find(filter, {'utility.ica.icVoltage':1});
+	db.getCollection('projects').find(filter, {'utility.ica.icVoltage':1})
 
 
 ----------
