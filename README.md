@@ -54,6 +54,9 @@ Search if field `utility.ica.icVoltage` exists:
 	var filter = {'utility.ica.icVoltage':{$exists:true}};
 	db.getCollection('projects').find(filter, {'utility.ica.icVoltage':1})
 
+#### Field exists by REGEX:
+
+db.getCollection('fields').find({label:{$regex:"Project Na"}})
 
 ----------
 
