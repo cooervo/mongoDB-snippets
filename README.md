@@ -56,7 +56,8 @@ Search if field `utility.ica.icVoltage` exists:
 
 #### Field exists by REGEX:
 
-db.getCollection('fields').find({label:{$regex:"Project Na"}})
+db.getCollection('fields').find({label: /Project Nam/})
+db.getCollection('fields').find({label:{$regex:"Project Nam"}})
 
 ----------
 
